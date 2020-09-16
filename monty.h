@@ -1,13 +1,13 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
-#include <stdio.h> /* stderr, stdin, and stdout, printf, FILE, fclose */
-#include <string.h> /* string manipulation, strtok */
-#include <stdlib.h> /* size_T, exit status, atoi, free, malloc */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h> /* access */
-#include <fcntl.h> /* open */
+#include <unistd.h>
+#include <fcntl.h>
 
 extern int global_var;
 int global_var;
