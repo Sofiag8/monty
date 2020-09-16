@@ -13,6 +13,8 @@ void read_file(char *file_name)
 	size_t size = 0;
 	/* object type for storing information for a file stream */
 	FILE *file_data;
+	void (*s)(stack_t **stack, unsigned int line_number);
+
 
 	file_data = fopen(file_name, "r");
 	if (file_data == NULL)
@@ -28,7 +30,18 @@ void read_file(char *file_name)
 		if (tokens == NULL)
 			continue;
 		else
-			op_functions(tokens, line_number)(&stack, line_number);
+			s = op_functions(tokens, line_number);
+		if ( s != NULL)
+		{
+			s(&stack, line_number);
+		}
+		else
+		{
+			fclose(file_data);
+			free(buffer);
+			free_stack(&stack);
+			exit(EXIT_FAILURE);
+		}
 	}
 	fclose(file_data);
 	free(buffer);

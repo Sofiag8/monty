@@ -12,6 +12,7 @@ void (*op_functions(char **tks, unsigned int ln))(stack_t **, unsigned int)
 		{"pall", pall_func},
 		{"pint", pint_func},
 		{"pop", pop_func},
+		{"swap", swap_func},
 		{NULL, NULL}
 	};
 	unsigned int src = 0;
@@ -26,7 +27,7 @@ void (*op_functions(char **tks, unsigned int ln))(stack_t **, unsigned int)
 			{
 				free(tks);
 				handler_errors(ln, 2);
-				exit(EXIT_FAILURE);
+				return (NULL);
 			}
 			else if ((strcmp(funcs[src].opcode, "push") == 0))
 				global_var = atoi(tks[1]);
@@ -35,7 +36,7 @@ void (*op_functions(char **tks, unsigned int ln))(stack_t **, unsigned int)
 		}
 		src++;
 	}
-	printf("L%d: unknown instruction %s\n", ln, tks[0]);
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln, tks[0]);
 	free(tks);
 	exit(EXIT_FAILURE);
 }

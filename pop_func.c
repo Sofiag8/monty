@@ -9,7 +9,7 @@ void pop_func(stack_t **stack, unsigned int line_number)
 {
 	stack_t *aux_stack;
 
-	if (*stack == NULL)
+        if (*stack == NULL)
 		handler_errors(line_number, 1);
 
 	if ((*stack)->next == NULL)
