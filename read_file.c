@@ -8,8 +8,7 @@ void read_file(char *file_name)
 {
 	stack_t *stack = NULL;
 	int line_number = 0;
-	char **tokens;
-	char *buffer = NULL;
+	char **tokens, *buffer = NULL;
 	size_t size = 0;
 	/* object type for storing information for a file stream */
 	FILE *file_data;
@@ -31,12 +30,13 @@ void read_file(char *file_name)
 			continue;
 		else
 			s = op_functions(tokens, line_number);
-		if ( s != NULL)
+		if (s != NULL)
 		{
 			s(&stack, line_number);
 		}
 		else
 		{
+			handler_errors(line_number, 2);
 			fclose(file_data);
 			free(buffer);
 			free_stack(&stack);

@@ -27,7 +27,6 @@ void (*op_functions(char **tks, unsigned int ln))(stack_t **, unsigned int)
 			if (comp && (tks[1] == NULL || (!(check_args(tks[1])))))
 			{
 				free(tks);
-				handler_errors(ln, 2);
 				return (NULL);
 			}
 			else if ((strcmp(funcs[src].opcode, "push") == 0))
