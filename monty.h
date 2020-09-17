@@ -9,9 +9,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-extern int global_var;
-int global_var;
-
 /* given structures */
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -43,6 +40,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern int global_var;
+int global_var;
 
 /* interpreter funciontions */
 void read_file(char *file_name);
