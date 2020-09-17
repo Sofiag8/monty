@@ -7,7 +7,7 @@
 void read_file(char *file_name)
 {
 	stack_t *stack = NULL;
-	int line_number = 0;
+	int line_number = 1;
 	char **tokens;
 	char *buffer = NULL;
 	size_t size = 0;
