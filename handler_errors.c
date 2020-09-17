@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * handler_errors - manage errors due problems with program reading
- * @line_number: number of lines in the opcode file
+ * @line_num: number of lines in the opcode file
  * @type_err: number passed depending to the error type
  * Return: void
  */
@@ -15,6 +15,8 @@ void handler_errors(unsigned int line_num, int type_err)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
 	else if (type_err == 4)
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+	else if (type_err == 5)
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
 
 	exit(EXIT_FAILURE);
 }

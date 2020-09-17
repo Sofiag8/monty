@@ -13,6 +13,7 @@ void (*op_functions(char **tks, unsigned int ln))(stack_t **, unsigned int)
 		{"pint", pint_func},
 		{"pop", pop_func},
 		{"swap", swap_func},
+		{"add", add_func},
 		{NULL, NULL}
 	};
 	unsigned int src = 0;
