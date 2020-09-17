@@ -15,7 +15,7 @@ void pall_func(stack_t **stack, unsigned int line_number)
 	aux_stack = *stack;
 	while (aux_stack != NULL)
 	{
-		printf("%d\n", aux_stack->n);
+		fprintf(stdout, "%d\n", aux_stack->n);
 		aux_stack = aux_stack->next;
 	}
 }

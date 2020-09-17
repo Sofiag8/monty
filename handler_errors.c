@@ -14,5 +14,6 @@ void handler_errors(unsigned int line_num, int type_err)
 	else if (type_err == 3)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
 
+
 	exit(EXIT_FAILURE);
 }
